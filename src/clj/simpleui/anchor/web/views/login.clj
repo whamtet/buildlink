@@ -4,6 +4,7 @@
     [simpleui.anchor.util :refer [defcss]]
     [simpleui.anchor.web.htmx :refer [defcomponent]]
     [simpleui.anchor.web.views.components :as components]
+    [simpleui.anchor.web.views.lang :as lang]
     [simpleui.anchor.web.controllers.login :as controllers.login]))
 
 (defcss [:div.bg-clj-blue-light.text-gray-500])
@@ -24,6 +25,7 @@
      (warning (i18n "Unknown account")))
    (components/submit (i18n "Login"))])
 
+;; currently unused
 (defn- registration-form [first-name last-name email problem]
   [:form#registration-form.p-2 {:hx-post "login:register"}
    (components/hidden "register" true)
@@ -58,7 +60,9 @@
       (i18n "Register")]]
     (if register
       (registration-form first-name last-name email problem)
-      (login-form email problem))]])
+      (login-form email problem))]
+    ;; language selector
+    (lang/lang-dropup req)])
 
 (defmacro or-keyword [test alternative]
   `(let [~'$ ~test]
@@ -72,6 +76,7 @@
                                 password
                                 password2
                                 command]
+  lang/lang-dropup ;; to ensure resolution
   (case command
     "login"
     (or-keyword
