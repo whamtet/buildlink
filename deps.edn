@@ -1,28 +1,29 @@
 {:paths   ["src/clj"
            "resources"]
 
- :deps    {org.clojure/clojure             {:mvn/version "1.12.0"}
+ :deps    {org.clojure/clojure {:mvn/version "1.12.0"}
 
            ;; Routing
-           metosin/reitit                  {:mvn/version "0.6.0"}
+ metosin/reitit {:mvn/version "0.6.0"}
 
            ;; Ring
-           metosin/ring-http-response      {:mvn/version "0.9.3"}
-           ring/ring-core                  {:mvn/version "1.13.0"}
-           ring/ring-defaults              {:mvn/version "0.5.0"}
+ metosin/ring-http-response {:mvn/version "0.9.3"}
+ ring/ring-core {:mvn/version "1.13.0"}
+ ring/ring-defaults {:mvn/version "0.5.0"}
 
            ;; Logging
-           ch.qos.logback/logback-classic  {:mvn/version "1.5.7"}
-           
+ ch.qos.logback/logback-classic {:mvn/version "1.5.7"}
+
            ;; Data coercion
-           luminus-transit/luminus-transit {:mvn/version "0.1.6"
-                                            :exclusions [com.cognitect/transit-clj]}
-           metosin/muuntaja                {:mvn/version "0.6.8"}
+ luminus-transit/luminus-transit {:mvn/version "0.1.6"
+                                  :exclusions [com.cognitect/transit-clj]}
+ metosin/muuntaja {:mvn/version "0.6.8"}
 
            ;; kit Libs
-           io.github.kit-clj/kit-core {:mvn/version "1.0.9"}
-           io.github.kit-clj/kit-undertow {:mvn/version "1.0.7"}
-           }
+ io.github.kit-clj/kit-core {:mvn/version "1.0.9"}
+ io.github.kit-clj/kit-undertow {:mvn/version "1.0.7"}
+ simpleui/simpleui {:git/url "https://github.com/whamtet/simpleui",
+                    :git/sha "e579acffd6dc16fc43916dbba54e2aa009efb3ac"}}
  :aliases {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}}
                    :ns-default build}
 

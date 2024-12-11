@@ -11,7 +11,8 @@
 
     ;; Routes
     [simpleui.anchor.web.routes.api]
-    )
+    
+    [simpleui.anchor.web.routes.ui])
   (:gen-class))
 
 ;; log uncaught exceptions in threads
