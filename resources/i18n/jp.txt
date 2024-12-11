@@ -243,3 +243,9 @@ Search users and products...
 
 Remove last item?
 最後の項目を削除しますか?
+
+Financial Model
+財務モデル
+
+Edit Financial Model
+財務モデルの編集

@@ -1,5 +1,6 @@
 (ns simpleui.anchor.web.views.home
     (:require
+      [simpleui.anchor.web.views.dashboard :as dashboard]
       [simpleui.anchor.web.views.login :as login]
       [simpleui.core :as simpleui :refer [defcomponent]]
       [simpleui.anchor.web.htmx :refer [page-htmx]]))
@@ -13,5 +14,5 @@
        (page-htmx
         {:css ["/output.css"] :hyperscript? true}
         (if (some->> req :session :id)
-          "todo"
+          (dashboard/dashboard req)
           (login/login req)))))))

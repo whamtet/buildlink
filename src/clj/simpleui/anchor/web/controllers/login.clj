@@ -23,3 +23,6 @@
            (= "admin" password))
     (assoc-session session :id 1)
     :unknown))
+
+(defn logout [session]
+  (dissoc-session session :id))

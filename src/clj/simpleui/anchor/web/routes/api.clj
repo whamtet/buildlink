@@ -1,6 +1,7 @@
 (ns simpleui.anchor.web.routes.api
   (:require
     [simpleui.anchor.web.controllers.health :as health]
+    [simpleui.anchor.web.controllers.login :as login]
     [simpleui.anchor.web.middleware.exception :as exception]
     [simpleui.anchor.web.middleware.formats :as formats]
     [integrant.core :as ig]
@@ -38,7 +39,10 @@
            :swagger {:info {:title "simpleui.anchor API"}}
            :handler (swagger/create-swagger-handler)}}]
    ["/health"
-    {:get health/healthcheck!}]])
+    {:get health/healthcheck!}]
+   ["/logout"
+    (fn [{:keys [session]}]
+      (login/logout session))]])
 
 (derive :reitit.routes/api :reitit/routes)
 
