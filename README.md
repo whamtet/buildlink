@@ -1,6 +1,6 @@
-# anchor
+# Barb
 
-![Anchor](resources/public/anchor.png)
+![Barb](resources/public/logo.jpg)
 
 Start a [REPL](#repls) in your editor or terminal of choice.
 

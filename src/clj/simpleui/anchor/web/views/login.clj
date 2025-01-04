@@ -44,10 +44,7 @@
 
 (defn- login-disp [req register first-name last-name email problem]
   [:div.pt-6.pb-12.relative.min-h-screen {:hx-target "this" :_ "on click add .hidden to .drop"}
-   [:img.w-72.mx-auto {:src "/anchor.png"}]
-   [:a.absolute.top-3.right-3 {:href "https://github.com/whamtet/anchor-simpleui"
-                               :target "_blank"}
-    [:img.w-8.opacity-70 {:src "/github-mark.png"}]]
+   [:img.w-72.mx-auto {:src "/logo.jpg"}]
    [:div {:class "mt-8
    mx-auto w-1/2
    border rounded-lg overflow-hidden"}

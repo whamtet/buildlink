@@ -249,3 +249,6 @@ Financial Model
 
 Edit Financial Model
 財務モデルの編集
+
+Go
+行く

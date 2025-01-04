@@ -32,7 +32,11 @@
   (page
    [:head
     [:meta {:charset "UTF-8"}]
-    [:title (i18n "Anchor")]
+    [:title (i18n "Tenderbarb")]
+    [:meta {:property "og:title" :content "Tenderbarb Platform"}]
+    [:meta {:property "og:type" :content "website"}]
+    [:meta {:property "og:url" :content "https://tenderbarb.simpleui.io/"}]
+    [:meta {:property "og:image" :content "https://tenderbarb.simpleui.io/logo.jpg"}]
     [:link {:rel "icon" :href "/logo_dark.svg"}]
     (for [sheet css]
       [:link {:rel "stylesheet" :href (resource-cache/cache-suffix sheet)}])]

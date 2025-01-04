@@ -8,18 +8,11 @@
 
 (defn main-dropdown []
   [:div.absolute.top-1.right-1.flex.items-center
-   [:div.p-1
-    [:a {:href "https://github.com/whamtet/anchor-simpleui"
-         :target "_blank"}
-     [:img.w-8.opacity-70 {:src "/github-mark.png"}]]]
    (dropdown/dropdown
     "User"
     [[:a {:href "/"}
       [:div.p-2
        (i18n "Dashboard")]]
-     [:a {:href "/model/"}
-      [:div.p-2
-       (i18n "Financial Model")]]
      [:div.cursor-pointer
       [:div.p-2 {:hx-post "/api/logout"}
        (i18n "Logout")]]])])
@@ -28,9 +21,9 @@
   [:a {:href "/model/"}
    [:div.w-96.border.rounded-lg.p-1.text-gray-500
     [:div
-     icons/calculator]
+     icons/rising-revenue]
     [:div.border-t.mt-2.p-2
-     (i18n "Edit Financial Model")]]])
+     (i18n "Go")]]])
 
 (defcomponent dashboard [req]
   (let []
