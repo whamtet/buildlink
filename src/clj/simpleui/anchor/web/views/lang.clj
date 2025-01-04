@@ -2,13 +2,15 @@
   (:require
     [simpleui.anchor.i18n :refer [i18n]]
     [simpleui.anchor.web.htmx :refer [defcomponent]]
+    [simpleui.anchor.web.middleware.i18n :as middleware.i18n]
     [simpleui.anchor.web.views.components :as components]
     [simpleui.anchor.web.views.components.dropdown :as dropdown]
     [simpleui.anchor.web.controllers.login :as controllers.login]))
 
 (def lang-disp
-  {nil "English"
-   "jp" "日本語"})
+  {"en" "English"
+   "ja" "日本語"
+   "ko" "한국어"})
 
 (defn dropup [label m]
   [:div
@@ -22,7 +24,8 @@
 (defcomponent ^:endpoint lang-dropup [req ^:nullable new-lang]
   (if top-level?
     (controllers.login/assoc-lang (:session req) new-lang)
-    [:div.absolute.bottom-0.flex.w-full.justify-center
-     (dropup
-      (lang-disp lang)
-      (dissoc lang-disp lang))]))
+    (let [lang (or middleware.i18n/*lang* "en")]
+      [:div.absolute.bottom-0.flex.w-full.justify-center
+       (dropup
+        (lang-disp lang)
+        (dissoc lang-disp lang))])))
