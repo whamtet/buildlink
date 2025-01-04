@@ -24,8 +24,7 @@
 (defcomponent ^:endpoint lang-dropup [req ^:nullable new-lang]
   (if top-level?
     (controllers.login/assoc-lang (:session req) new-lang)
-    (let [lang (or middleware.i18n/*lang* "en")]
-      [:div.absolute.bottom-0.flex.w-full.justify-center
-       (dropup
-        (lang-disp lang)
-        (dissoc lang-disp lang))])))
+    [:div.absolute.bottom-0.flex.w-full.justify-center
+     (dropup
+      (lang-disp middleware.i18n/*lang*)
+      (dissoc lang-disp middleware.i18n/*lang*))]))
