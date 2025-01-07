@@ -53,9 +53,10 @@
       (json/write-str
        (util/map-vals #(m# % %) ~m)))))
 
-(defn spit-phrases []
-  (->> phrases
-       sort
-       (map #(str % "\n"))
-       (string/join "\n")
-       (spit "i18n.txt")))
+(defn spit-phrases [lang]
+  (let [translation (extract-translation lang)]
+    (->> phrases
+         sort
+         (map #(str % "\n" (translation %)))
+         (string/join "\n")
+         (spit "i18n.txt"))))
