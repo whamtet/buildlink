@@ -5,16 +5,16 @@
     [simpleui.anchor.config :as config]
     [simpleui.anchor.env :refer [defaults]]
 
-    ;; Edges       
+    ;; Edges
     [kit.edge.server.undertow]
     [simpleui.anchor.web.handler]
 
     ;; Routes
     [simpleui.anchor.web.routes.api]
-    
-    [simpleui.anchor.web.routes.ui] 
-    [kit.edge.db.sql.conman] 
-    [kit.edge.db.sql.migratus])
+
+    [simpleui.anchor.web.routes.ui]
+    [kit.edge.db.sql.conman]
+    [simpleui.barb.migratus])
   (:gen-class))
 
 ;; log uncaught exceptions in threads

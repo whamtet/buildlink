@@ -13,11 +13,11 @@
    [:div {:class "mt-8
    mx-auto w-1/2 p-4
    border rounded-lg overflow-hidden"}
-    [:div.flex.items-center.cursor-pointer.mb-4 {:hx-post "login:login"}
+    [:a.flex.items-center.mb-4 {:href "/api/oauth/instagram"}
      [:img.w-10.mr-4 {:src "/instagram.png"}] (i18n "Log in with Instagram")]
-    [:div.flex.items-center.cursor-pointer.mb-4 {:hx-post "login:login"}
+    [:a.flex.items-center.mb-4 {:href "/api/oauth/tiktok"}
      [:img.w-10.mr-4 {:src "/tiktok.png"}] (i18n "Log in with Tiktok")]
-    [:div.flex.items-center.cursor-pointer.mb-4 {:hx-post "login:login"}
+    [:a.flex.items-center.mb-2 {:href "/api/oauth/youtube"}
      [:img.w-10.mr-4 {:src "/youtube.png"}] (i18n "Log in with Youtube")]
     ]
     ;; language selector

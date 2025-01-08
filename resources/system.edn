@@ -53,6 +53,6 @@
  :db.sql/migrations {:store :database,
                      :db {:datasource #ig/ref :db.sql/connection},
                      :migrate-on-init? true}
- :db.sql/connection #profile {:dev {:jdbc-url "jdbc:sqlite:barb.db"},
+ :db.sql/connection #profile {:dev {:jdbc-url "jdbc:sqlite:barb.db?foreign_keys=true"},
                               :test {:jdbc-url "jdbc:sqlite::memory:"},
-                              :prod {:jdbc-url "jdbc:sqlite:barb.db"}}}
+                              :prod {:jdbc-url "jdbc:sqlite:barb.db?foreign_keys=true"}}}
