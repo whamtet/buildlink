@@ -12,7 +12,9 @@
     ;; Routes
     [simpleui.anchor.web.routes.api]
     
-    [simpleui.anchor.web.routes.ui])
+    [simpleui.anchor.web.routes.ui] 
+    [kit.edge.db.sql.conman] 
+    [kit.edge.db.sql.migratus])
   (:gen-class))
 
 ;; log uncaught exceptions in threads
