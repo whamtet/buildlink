@@ -7,6 +7,7 @@ CREATE TABLE social (
     social_id INTEGER PRIMARY KEY,
     user_id INTEGER,
     use_default BOOLEAN,
+    platform TEXT,
     email TEXT,
     first_name TEXT,
     last_name TEXT,
