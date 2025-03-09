@@ -40,6 +40,9 @@
            :handler (swagger/create-swagger-handler)}}]
    ["/health"
     {:get health/healthcheck!}]
+   ["/oauth/youtube"
+    (fn [req]
+      (login/login req "" ""))]
    ["/logout"
     (fn [{:keys [session]}]
       (login/logout session))]])

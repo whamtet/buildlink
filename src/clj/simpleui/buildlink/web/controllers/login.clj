@@ -5,8 +5,15 @@
 (defn- refresh-session [session]
   (assoc simpleui.response/hx-refresh :session session))
 
+(defn- root-session [session]
+  (assoc (simpleui.response/redirect "/") :session session))
+
 (defn- assoc-session [session & keys]
   (refresh-session
+   (apply assoc session keys)))
+
+(defn- assoc-session-root [session & keys]
+  (root-session
    (apply assoc session keys)))
 
 (defn- dissoc-session [session & keys]
@@ -20,7 +27,7 @@
              email
              password]
   (if true
-    (assoc-session session :id 1)
+    (assoc-session-root session :id 1)
     :unknown))
 
 (defn logout [session]
