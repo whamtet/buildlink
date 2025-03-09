@@ -4,7 +4,7 @@
            :prod :prod}
 
  :server/http
- {:port #long #or [#env PORT 3000]
+ {:port #long #or [#env PORT 3002]
   :host #or [#env HTTP_HOST "0.0.0.0"]
   :handler #ig/ref :handler/ring}
 
@@ -19,7 +19,7 @@
                                   :keywordize true}
                          :cookies true
                          :session {:flash true
-                                   :cookie-name "simpleui.anchor"
+                                   :cookie-name "simpleui.buildlink"
                                    :cookie-attrs {:max-age 86400
                                                   :http-only true
                                                   :same-site :strict}}
@@ -53,6 +53,6 @@
  :db.sql/migrations {:store :database,
                      :db {:datasource #ig/ref :db.sql/connection},
                      :migrate-on-init? true}
- :db.sql/connection #profile {:dev {:jdbc-url "jdbc:sqlite:barb.db?foreign_keys=true"},
+ :db.sql/connection #profile {:dev {:jdbc-url "jdbc:sqlite:buildlink.db?foreign_keys=true"},
                               :test {:jdbc-url "jdbc:sqlite::memory:"},
-                              :prod {:jdbc-url "jdbc:sqlite:barb.db?foreign_keys=true"}}}
+                              :prod {:jdbc-url "jdbc:sqlite:buildlink.db?foreign_keys=true"}}}

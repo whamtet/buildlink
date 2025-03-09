@@ -1,6 +1,6 @@
-# Barb
+# Buildlink
 
-![Barb](resources/public/logo.jpg)
+![Buildlink](resources/public/logo.jpg)
 
 Start a [REPL](#repls) in your editor or terminal of choice.
 
