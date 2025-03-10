@@ -4,7 +4,8 @@
 
 ;; fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
 (defn- default-lang [lang]
-  (re-find #"en|tl|fil" lang))
+  (when lang
+    (re-find #"en|tl|fil" lang)))
 
 (defn set-lang [handler]
   (fn [req]
