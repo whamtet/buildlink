@@ -38,6 +38,11 @@
     {:get {:no-doc  true
            :swagger {:info {:title "simpleui.buildlink API"}}
            :handler (swagger/create-swagger-handler)}}]
+   ["/session"
+    (fn [req]
+      {:status 200
+       :headers {"Content-Type" "text/html"}
+       :body (pr-str (:session req))})]
    ["/health"
     {:get health/healthcheck!}]
    ["/oauth/youtube"
