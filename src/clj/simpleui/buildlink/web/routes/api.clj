@@ -45,7 +45,7 @@
       (login/login req "" ""))]
    ["/fuck"
     (fn [req]
-      (controllers.login/assoc-lang (:session req) "tl"))]
+      (login/assoc-lang (:session req) "tl"))]
    ["/logout"
     (fn [{:keys [session]}]
       (login/logout session))]])
