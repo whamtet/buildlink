@@ -9,7 +9,6 @@
 
 (def lang-disp
   {"en" "English"
-   "tl" "Tagalog"
    "fil" "Filipino"})
 
 (defn dropup [label m]
