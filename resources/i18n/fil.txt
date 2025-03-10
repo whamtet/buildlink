@@ -1,0 +1,10 @@
+Buildlink
+Buildlink
+Dashboard
+Dashboard
+Go
+Pumunta ka
+Log in with Youtube
+Mag-log in gamit ang Youtube
+Logout
+Mag-logout

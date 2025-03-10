@@ -9,8 +9,8 @@
 
 (def lang-disp
   {"en" "English"
-   "ja" "日本語"
-   "ko" "한국어"})
+   "tl" "Tagalog"
+   "fil" "Filipino"})
 
 (defn dropup [label m]
   [:div
